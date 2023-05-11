@@ -1,5 +1,5 @@
-// import Image from 'next/image';
-// import AlienLogo from '@public/logos/AlienWordmark.png';
+import Image from 'next/image';
+import AlienLogo from '@public/logos/AlienWordmark.png';
 
 export default function Footer() {
   return (
@@ -7,12 +7,9 @@ export default function Footer() {
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="mb-4 sm:mb-0">
-            {/* <Image
-              className="h-10 mr-3 w-auto"
-              priority
-              src={AlienLogo}
-              alt="Alien"
-            /> */}
+            <a href="/">
+              <Image className="h-10 mr-3 w-auto" src={AlienLogo} alt="Alien" />
+            </a>
           </div>
 
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
