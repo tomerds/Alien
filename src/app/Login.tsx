@@ -42,7 +42,7 @@ function Login() {
       const { error } = await supabaseClient.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: 'http://localhost:3000/welcome',
+          emailRedirectTo: 'https://www.alienstudios.app/welcome',
         },
       });
       if (error) throw error;
