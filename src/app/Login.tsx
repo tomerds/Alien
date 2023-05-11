@@ -23,8 +23,8 @@ function IndexPage() {
               <span className="text-black">AI influencer</span>
             </h1>
             <p className="font-secondary text-palette-light text-white md:text-lg lg:text-xl">
-              Easily generate photos, voice, and text.
-              <br /> Built for brands and influencers.
+              Easily generate photos, voice, and text based on your content.
+              Built for brands and influencers.
             </p>
             <Login />
           </div>
@@ -61,7 +61,7 @@ function Login() {
   };
 
   return (
-    <div className="container mx-auto flex space-x-5 place-content-center text-black">
+    <div className="container mx-auto flex flex-col  md:flex-row space-y-5 md:space-x-5 md:space-y-0 place-content-center text-black">
       <input
         className="border-2 border-gray-100 rounded-lg p-4 w-full"
         type="email"
@@ -74,7 +74,7 @@ function Login() {
           e.preventDefault();
           handleLogin(email);
         }}
-        className="px-10 bg-black text-gray-100 text-lg rounded-lg focus:border border-gray-100"
+        className="px-10 bg-black text-gray-100 text-lg p-4 rounded-lg focus:border border-gray-100"
       >
         <span className="whitespace-nowrap	">Join Waitlist</span>
       </button>
