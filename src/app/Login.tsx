@@ -1,14 +1,13 @@
 'use client';
 
-import { useState } from 'react'
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import supabaseClient from './utils/supabase-browser';
 
 function IndexPage() {
   return (
     <div className="bg-gradient-to-tr from-red-800 to-orange-400 relative h-screen w-screen flex flex-row-reverse justify-center">
-
-      <div className='w-1/2 hidden md:flex '>
+      <div className="w-1/2 hidden md:flex ">
         <img
           className=" inset-0 w-full h-full object-cover mix-blend-multiply filter brightness-100"
           alt="main background image"
@@ -16,31 +15,24 @@ function IndexPage() {
         />
       </div>
 
-      <div className='md:w-1/2 justify-center items-center flex'>
-
+      <div className="md:w-1/2 justify-center items-center flex">
         <div className=" inset-0 flex flex-col justify-center items-center w-5/6 max-w-lg mx-auto text-center">
           <div className="space-y-8">
             <h1 className="font-primary font-extrabold text-white text-3xl sm:text-4xl md:text-5xl md:leading-tight">
-              Create your own <br /><span className="text-black">
-                AI influencer
-              </span>
+              Create your own <br />
+              <span className="text-black">AI influencer</span>
             </h1>
             <p className="font-secondary text-palette-light text-white md:text-lg lg:text-xl">
-              Easily generate photos, voice, and text.<br />  Built for brands and influencers.
+              Easily generate photos, voice, and text.
+              <br /> Built for brands and influencers.
             </p>
             <Login />
           </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
-
-
-
-
-
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -48,23 +40,32 @@ function Login() {
   const handleLogin = async (email) => {
     try {
       const { error } = await supabaseClient.auth.signInWithOtp({
-        email, options: {
+        email,
+        options: {
           emailRedirectTo: 'http://localhost:3000/welcome',
         },
       });
       if (error) throw error;
-      toast.success('Verify your email to join the waitlist', { id: '1', position: 'bottom-center', duration: 3000 });
+      toast.success('Verify your email to join the waitlist', {
+        id: '1',
+        position: 'bottom-center',
+        duration: 3000,
+      });
     } catch (error) {
-      toast.error('There was an error saving your email', { id: '2', position: 'bottom-center', duration: 3000 });
+      toast.error('There was an error saving your email', {
+        id: '2',
+        position: 'bottom-center',
+        duration: 3000,
+      });
     }
   };
 
   return (
-    <div className='container mx-auto flex space-x-5 place-content-center text-black'>
+    <div className="container mx-auto flex space-x-5 place-content-center text-black">
       <input
-        className='border-2 border-gray-100 rounded-lg p-4 w-full'
-        type='email'
-        placeholder='Your email'
+        className="border-2 border-gray-100 rounded-lg p-4 w-full"
+        type="email"
+        placeholder="Your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -73,12 +74,12 @@ function Login() {
           e.preventDefault();
           handleLogin(email);
         }}
-        className='px-10 bg-black text-gray-100 text-lg rounded-lg focus:border border-gray-100'
+        className="px-10 bg-black text-gray-100 text-lg rounded-lg focus:border border-gray-100"
       >
-        <span className='whitespace-nowrap	' >Join Waitlist</span>
+        <span className="whitespace-nowrap	">Join Waitlist</span>
       </button>
     </div>
   );
 }
 
-export default IndexPage
+export default IndexPage;
