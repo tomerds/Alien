@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
+    "typeRoots": ["./typings"],
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -30,7 +31,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "src/react-app-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }

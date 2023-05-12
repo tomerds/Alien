@@ -1,4 +1,4 @@
-// import Footer from '../Footer';
+import Footer from '../Footer';
 
 export default function WelcomePage() {
   return (
@@ -25,7 +25,7 @@ export default function WelcomePage() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
